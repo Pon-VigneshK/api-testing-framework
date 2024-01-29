@@ -135,20 +135,20 @@ This method returns the `ApiResponse` method containing the verification status 
 ```java
 public class TestClassName extends RequestBuilder {}
 ```
-    This line defines a class named `TestClassName` that extends another class named `RequestBuilder`, indicating that `TestClassName` inherits functionality from `RequestBuilder`.
+This line defines a class named `TestClassName` that extends another class named `RequestBuilder`, indicating that `TestClassName` inherits functionality from `RequestBuilder`.
 
 **Test Method:**
 ```java
 @Test
 public void testCaseName(Map<String, String> data) {}
 ```
-    This is a TestNG test method annotated with `@Test`, indicating it's a test case. The method is named `testCaseName` and takes a `Map<String, String>` parameter named `data`. The test name must match the column name "testname" in the Excel sheet for the test to run; otherwise, it will be ignored. The match has to be there in both the RUNMANAGER and TESTDATA sheets. `data` is a HashMap containing all the values of test data needed to run the tests.
+This is a TestNG test method annotated with `@Test`, indicating it's a test case. The method is named `testCaseName` and takes a `Map<String, String>` parameter named `data`. The test name must match the column name "testname" in the Excel sheet for the test to run; otherwise, it will be ignored. The match has to be there in both the RUNMANAGER and TESTDATA sheets. `data` is a HashMap containing all the values of test data needed to run the tests.
 
 **Reading JSON Payload:**
 ```java
 String body = FileReadUtils.getJsonFileLocationAsString(FrameworkConstants.getJsonPayload("createPatient.json"));
 ```
-    This line reads the content of a JSON file and stores it in the `body` variable.
+This line reads the content of a JSON file and stores it in the `body` variable.
 
 **Making API Request:**
 ```java
@@ -162,4 +162,4 @@ This line makes an API request using the `requestCall` method (presumably inheri
 ```java
 Assertions.assertThat(apiResponse.isBodyVerificationFlag()).isEqualTo(true);
 ```
-    This line uses AssertJ to check if the `isBodyVerificationFlag` property of the `apiResponse` object is equal to true. If false, the test will fail.
+This line uses AssertJ to check if the `isBodyVerificationFlag` property of the `apiResponse` object is equal to true. If false, the test will fail.
