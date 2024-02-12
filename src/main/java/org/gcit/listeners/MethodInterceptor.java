@@ -26,24 +26,43 @@ public class MethodInterceptor  implements IMethodInterceptor {
      * run only tests a and c. It then returns the updated list after performing the comparisons.
      */
     @Override
-    public List<IMethodInstance> intercept(List<IMethodInstance> method, ITestContext iTestContext) {
+    public List<IMethodInstance> intercept(List<IMethodInstance> methods, ITestContext iTestContext) {
         List<IMethodInstance> results = new ArrayList<>();
-        JsonUtils.generateRunnerListJsonDataFromExcel(FrameworkConstants.getRunmangerExcelSheet());
+        // generate runner list json
+        JsonUtils.generateRunnerListJsonData();
         List<Map<String, Object>> list = JsonUtils.getTestDetails(FrameworkConstants.getRunmanager(), FrameworkConstants.getTestcaselist());
-        for (int i = 0; i < method.size(); i++) {
+        for (int i = 0; i < methods.size(); i++) {
             for (int j = 0; j < list.size(); j++) {
-                if (method.get(i).getMethod().getMethodName().equalsIgnoreCase(String.valueOf(list.get(j).get("testcasename"))) &&
+                if (methods.get(i).getMethod().getMethodName().equalsIgnoreCase(String.valueOf(list.get(j).get("testcasename"))) &&
                         String.valueOf(list.get(j).get("execute")).equalsIgnoreCase("yes")) {
-                    method.get(i).getMethod().setDescription(String.valueOf(list.get(j).get("testdescription")));
-                    method.get(i).getMethod().setPriority(Integer.parseInt(String.valueOf(list.get(j).get("priority"))));
-                    results.add(method.get(i));
+                    methods.get(i).getMethod().setDescription(String.valueOf(list.get(j).get("testdescription")));
+                    methods.get(i).getMethod().setPriority(Integer.parseInt(String.valueOf(list.get(j).get("priority"))));
+                    results.add(methods.get(i));
                 }
             }
         }
-
-
         return results;
     }
+//    @Override
+//    public List<IMethodInstance> intercept(List<IMethodInstance> method, ITestContext iTestContext) {
+//        List<IMethodInstance> results = new ArrayList<>();
+//        JsonUtils.generateTestDataJson();
+//        List<Map<String, Object>> list = JsonUtils.getTestDetails(FrameworkConstants.getRunmanager(), FrameworkConstants.getTestcaselist());
+//        for (int i = 0; i < method.size(); i++) {
+//            for (int j = 0; j < list.size(); j++) {
+//                if (method.get(i).getMethod().getMethodName().equalsIgnoreCase(String.valueOf(list.get(j).get("testcasename"))) &&
+//                        String.valueOf(list.get(j).get("execute")).equalsIgnoreCase("yes")) {
+//                    method.get(i).getMethod().setDescription(String.valueOf(list.get(j).get("testdescription")));
+//                    method.get(i).getMethod().setPriority(Integer.parseInt(String.valueOf(list.get(j).get("priority"))));
+//                    results.add(method.get(i));
+//                }
+//            }
+//        }
+//        return results;
+//    }
+
+
+
 //    public List<IMethodInstance> intercept(List<IMethodInstance> methods, ITestContext context) {
 //        List<Map<String, String>> list = ExcelUtils.getTestDetails("RUNMANAGER");
 //        List<IMethodInstance> result = new ArrayList<>();

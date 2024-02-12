@@ -6,18 +6,21 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Predicate;
+
+import static org.gcit.utils.JsonUtils.generateTestDataJson;
+import static org.gcit.utils.JsonUtils.getTestDataDetails;
 
 public final class DataProviderUtils {
     private DataProviderUtils() {
     }
+    private static List<Map<String, Object>> testDataFromJson = new ArrayList();
 
 
     @DataProvider
     public static Object[] getData(Method method) {
+
         String testcasename = method.getName();
         List<Map<String, String>> list = ExcelUtils.getTestDetails(FrameworkConstants.getDataExcelSheet());
         List<Map<String, String>> iterationlist = new ArrayList<>();
@@ -32,6 +35,30 @@ public final class DataProviderUtils {
             }
         }
         return iterationlist.toArray();
+    }
+    @DataProvider(name = "getJsonTestData")
+    public static Object[] getJsonData(Method method) {
+        String testName = method.getName();
+        List<Map<String, Object>> iterationList = new ArrayList();
+        if (testDataFromJson.isEmpty()) {
+            //get the data from database
+            generateTestDataJson();
+            //Store the test details in list
+            testDataFromJson = getTestDataDetails();
+        }
+
+
+        for (int i = 0; i < testDataFromJson.size(); i++) {
+            if (String.valueOf(testDataFromJson.get(i).get("testcasename")).equalsIgnoreCase(testName) &&
+                    String.valueOf(testDataFromJson.get(i).get("execute")).equalsIgnoreCase("yes")) {
+                iterationList.add(testDataFromJson.get(i));
+            }
+
+        }
+        Set<Map<String, Object>> set = new HashSet(iterationList);
+        iterationList.clear();
+        iterationList.addAll(set);
+        return iterationList.toArray();
     }
 //    @DataProvider(parallel = false)
 //    public static Object[] getData(Method m) {

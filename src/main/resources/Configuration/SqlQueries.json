@@ -1,0 +1,8 @@
+{
+  "selectqueries": {
+    "FHIR_TestData": "select * from emp_service_data;"
+  },
+  "runnerlistqueries": {
+    "testCaseLists": "select * from emp_service_runnerlist;"
+  }
+}

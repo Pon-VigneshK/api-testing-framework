@@ -15,13 +15,14 @@ public final class FrameworkConstants {
      * or modified often, then it should be stored in the property files.
      */
 
-    // Paths for different resources and reports
+    // Paths for different resources and report
+
     private static final String USER_DIR = System.getProperty("user.dir");
     private static final String TEST_RESOURCES_PATH = USER_DIR + File.separator + "src" + File.separator + "test" + File.separator + "resources";
     private static final String MAIN_RESOURCES_PATH = USER_DIR + File.separator + "src" + File.separator + "main" + File.separator + "resources";
     private static final String CONFIG_FILE_PATH = TEST_RESOURCES_PATH + File.separator + "config";
     private static final String EXTENT_REPORT_PATH = USER_DIR + File.separator + "extent-test-output";
-    private static final String RESPONSE_OUTPUT_PATH = USER_DIR + File.separator + "response-test-output"+ File.separator;
+    private static final String RESPONSE_OUTPUT_PATH = USER_DIR + File.separator + "response-test-output" + File.separator;
     private static final String EXCEL_REPORT_PATH = USER_DIR + File.separator + "excel-test-report";
     private static final String PAYROLL_RESOURCES_PATH = TEST_RESOURCES_PATH + File.separator + "payload";
 
@@ -36,26 +37,28 @@ public final class FrameworkConstants {
     // Sheet names in Excel files
     private static final String DATA_EXCEL_SHEET = "DATA";
     private static final String RUNMANGER_EXCEL_SHEET = "RUNMANAGER";
+    private static boolean flag = false;
 
     // Other constants
+    private static final String SELECTQUERY_JSON_FILEPATH = MAIN_RESOURCES_PATH + File.separator+"Configuration"+ File.separator+  "SqlQueries.json";
     private static final String RUNMANAGER = "RunManager";
     private static final String TESTCASE_LIST = "testCaseLists";
-
+    private static String TESTDATAJSONFILEPATH = TEST_RESOURCES_PATH + File.separator+  "testdata"+ File.separator+"json";
     private static String reportClassName = "";
     private static String reportFilePath = "";
-    private static String TESTDATA_JSON_FILEPATH = TEST_RESOURCES_PATH + File.separator + "testdata" + File.separator + "json";
     private static String ENVIRONMENT = PropertyUtils.getValue(ConfigProperties.ENV);
+    private static String DATABASE_PATH = TEST_RESOURCES_PATH + File.separator + "testdata" + File.separator + "database"+ File.separator + "inputData.db";
 
     /**
      * Constants class for storing framework-related paths and values.
      */
-    private FrameworkConstants() {
-    }
+
     public static String getRunmangerExcelSheet() {
         return RUNMANGER_EXCEL_SHEET;
     }
+
     public static String getTestdataJsonFilepath() {
-        return TESTDATA_JSON_FILEPATH;
+        return TESTDATAJSONFILEPATH;
     }
 
     public static String getExcelFilePath() {
@@ -69,6 +72,7 @@ public final class FrameworkConstants {
     public static String getTestCaseJsonPath() {
         return TESTCASE_JSON_PATH;
     }
+
     public static String getTestcaselist() {
         return TESTCASE_LIST;
     }
@@ -80,11 +84,10 @@ public final class FrameworkConstants {
     private static String createReportPath() {
         try {
             String reportPath = EXTENT_REPORT_PATH + File.separator + getTodayDateTime() + File.separator + reportClassName + "_Automation Report";
-            if (PropertyUtils.getValue(ConfigProperties.OVERRIDEREPORTS).equalsIgnoreCase("NO")){
-                return EXTENT_REPORT_PATH + File.separator + getTodayDateTime() + File.separator + reportClassName + "_Automation Report"+".html";
-            }
-            else {
-                return EXTENT_REPORT_PATH+File.separator+"index.html";
+            if (PropertyUtils.getValue(ConfigProperties.OVERRIDEREPORTS).equalsIgnoreCase("NO")) {
+                return EXTENT_REPORT_PATH + File.separator + getTodayDateTime() + File.separator + reportClassName + "_Automation Report" + ".html";
+            } else {
+                return EXTENT_REPORT_PATH + File.separator + "index.html";
             }
         } catch (Exception e) {
             // Log the exception or handle it accordingly
@@ -92,6 +95,26 @@ public final class FrameworkConstants {
             return "";
         }
     }
+
+    public static String getSqlQueryjsonfilepath() {
+        return SELECTQUERY_JSON_FILEPATH;
+    }
+
+    public static void setTestDataJsonFilePath(String environmentName) {
+        if (!flag) {
+            if (Objects.isNull(environmentName))
+                TESTDATAJSONFILEPATH = TESTDATAJSONFILEPATH + "/" + environmentName.toUpperCase() + "_TestData.json";
+            else
+                TESTDATAJSONFILEPATH = TESTDATAJSONFILEPATH + "/" + getEnvironment().toUpperCase() + "_TestData.json";
+            flag = true;
+        }
+
+    }
+
+    public static String getDatabasePath() {
+        return DATABASE_PATH;
+    }
+
     public static String getResponseOutputPath(String endpointName, String responseType) {
         try {
             String fileExtension;
@@ -113,23 +136,26 @@ public final class FrameworkConstants {
     public static String createExcelReportPath() {
         try {
             if (PropertyUtils.getValue(ConfigProperties.OVERRIDEREPORTS).equalsIgnoreCase("Yes")) {
-                String path = EXCEL_REPORT_PATH + File.separator + getTodayDateTime()+"_Automation_Report.xlsx";
+                String path = EXCEL_REPORT_PATH + File.separator + getTodayDateTime() + "_Automation_Report.xlsx";
                 System.out.println(path);
                 return path;
             } else {
-                return EXCEL_REPORT_PATH + File.separator +"Automation_Report.xlsx";
+                return EXCEL_REPORT_PATH + File.separator + "Automation_Report.xlsx";
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
+
     private static String excelReportFilePath = "";
+
     public static String getExcelReportPath() {
         if (excelReportFilePath.isEmpty()) {
             excelReportFilePath = createExcelReportPath();
         }
         return excelReportFilePath;
     }
+
     public static void setReportClassName(String reportClassName) {
         FrameworkConstants.reportClassName = reportClassName;
     }
@@ -145,14 +171,13 @@ public final class FrameworkConstants {
         return reportFilePath;
     }
 
+    public static String getTestDataJsonFilePath() {
+        return TESTDATAJSONFILEPATH;
+    }
+
     public static String getDataExcelSheet() {
         return DATA_EXCEL_SHEET;
     }
-
-    public static String getRunmanagerExcelSheet() {
-        return RUNMANGER_EXCEL_SHEET;
-    }
-
 
     public static String getEnvironment() {
         return ENVIRONMENT;
