@@ -1,0 +1,17 @@
+{
+  "FHIR_TestData" : [ {
+    "endpoints" : "/update/21",
+    "id" : 4,
+    "env" : "PROD",
+    "execute" : "yes",
+    "testcasename" : "TC_004_UpdateEmp_PUT_Request",
+    "endpointname" : "UpdateEmp"
+  }, {
+    "endpoints" : "/update/21",
+    "id" : 9,
+    "env" : "PROD",
+    "execute" : "yes",
+    "testcasename" : "TC_004_UpdateEmp_PUT_Request",
+    "endpointname" : "UpdateEmp"
+  } ]
+}

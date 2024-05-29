@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite data-provider-thread-count="3" name="Failed suite [Employee]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="org.demo.listeners.ListenerClass"/>
+    <listener class-name="org.demo.listeners.MethodInterceptor"/>
+    <listener class-name="org.demo.listeners.AnnotationTransformer"/>
+  </listeners>
+  <test thread-count="5" name="Demo Script(failed)" verbose="0">
+    <classes>
+      <class name="org.demo.tests.Test_Emp">
+        <methods>
+          <include name="TC_004_UpdateEmp_PUT_Request" invocation-numbers="0"/>
+          <include name="TC_003_ReadAnEmp_GET_Request" invocation-numbers="0"/>
+          <include name="TC_001_CreateEmp_POST_Request" invocation-numbers="0"/>
+          <include name="TC_005_DeleteEmp_DELETE_Request" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- org.demo.tests.Test_Emp -->
+    </classes>
+  </test> <!-- Demo Script(failed) -->
+</suite> <!-- Failed suite [Employee] -->

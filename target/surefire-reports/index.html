@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Employee" class="navigator-link">
+              <span class="suite-name border-failed">Employee</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Employee" class="navigator-link ">
+                    <span>C:\Users\Pon Vignesh\IdeaProjects\api-testing-framework\src\test\resources\testrunner\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Employee" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Employee" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Employee" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Employee" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Employee" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Employee" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">5 methods, 4 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Employee" class="hide-methods failed suite-Employee"> (hide)</a> <!-- hide-methods failed suite-Employee -->
+                      <a href="#" panel-name="suite-Employee" class="show-methods failed suite-Employee"> (show)</a> <!-- show-methods failed suite-Employee -->
+                    </span>
+                    <div class="method-list-content failed suite-Employee">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Employee" title="org.demo.tests.Test_Emp" class="method navigator-link" hash-for-method="TC_001_CreateEmp_POST_Request({endpoints=/create, id=1, execute=yes, testcasename=TC_001_CreateEmp_POST_Request, endpointname=Crea...)">TC_001_CreateEmp_POST_Request({endpoints=/create, id=1, execute=yes, testcasename=TC_001_CreateEmp_POST_Request, endpointname=Crea...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Employee" title="org.demo.tests.Test_Emp" class="method navigator-link" hash-for-method="TC_003_ReadAnEmp_GET_Request({endpoints=/employee/1, id=3, execute=yes, testcasename=TC_003_ReadAnEmp_GET_Request, endpointname=R...)">TC_003_ReadAnEmp_GET_Request({endpoints=/employee/1, id=3, execute=yes, testcasename=TC_003_ReadAnEmp_GET_Request, endpointname=R...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Employee" title="org.demo.tests.Test_Emp" class="method navigator-link" hash-for-method="TC_004_UpdateEmp_PUT_Request({endpoints=/update/21, id=4, execute=yes, testcasename=TC_004_UpdateEmp_PUT_Request, endpointname=Up...)">TC_004_UpdateEmp_PUT_Request({endpoints=/update/21, id=4, execute=yes, testcasename=TC_004_UpdateEmp_PUT_Request, endpointname=Up...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Employee" title="org.demo.tests.Test_Emp" class="method navigator-link" hash-for-method="TC_005_DeleteEmp_DELETE_Request({endpoints=/delete/2, id=5, execute=yes, testcasename=TC_005_DeleteEmp_DELETE_Request, endpointname=...)">TC_005_DeleteEmp_DELETE_Request({endpoints=/delete/2, id=5, execute=yes, testcasename=TC_005_DeleteEmp_DELETE_Request, endpointname=...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Employee -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Employee" class="hide-methods passed suite-Employee"> (hide)</a> <!-- hide-methods passed suite-Employee -->
+                      <a href="#" panel-name="suite-Employee" class="show-methods passed suite-Employee"> (show)</a> <!-- show-methods passed suite-Employee -->
+                    </span>
+                    <div class="method-list-content passed suite-Employee">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Employee" title="org.demo.tests.Test_Emp" class="method navigator-link" hash-for-method="TC_002_ReadAllEmp_GET_Request({endpoints=/employees, id=2, execute=yes, testcasename=TC_002_ReadAllEmp_GET_Request, endpointname=R...)">TC_002_ReadAllEmp_GET_Request({endpoints=/employees, id=2, execute=yes, testcasename=TC_002_ReadAllEmp_GET_Request, endpointname=R...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Employee -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Employee" class="panel Employee">
+          <div class="suite-Employee-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">org.demo.tests.Test_Emp</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC_001_CreateEmp_POST_Request({endpoints=/create, id=1, execute=yes, testcasename=TC_001_CreateEmp_POST_Request, endpointname=Crea...)">
+                  </a> <!-- TC_001_CreateEmp_POST_Request({endpoints=/create, id=1, execute=yes, testcasename=TC_001_CreateEmp_POST_Request, endpointname=Crea...) -->
+                  <span class="method-name">TC_001_CreateEmp_POST_Request</span>
+                  <span class="parameters">({endpoints=/create, id=1, execute=yes, testcasename=TC_001_CreateEmp_POST_Request, endpointname=CreateEmp})</span>
+                  <div class="stack-trace">org.demo.exceptions.FrameworkException: Error executing HTTP request: Don&apos;t know how to encode {
+  &quot;name&quot;: &quot;Vignesh&quot;,
+  &quot;salary&quot;: &quot;123&quot;,
+  &quot;age&quot;: &quot;23&quot;
+} as a byte stream.
+
+Please use EncoderConfig (EncoderConfig#encodeContentTypeAs) to specify how to serialize data for this content-type.
+For example: &quot;given().config(RestAssured.config().encoderConfig(encoderConfig().encodeContentTypeAs(&quot;&quot;, ContentType.TEXT))). ..&quot;
+	at org.demo.requestbuilder.RequestBuilder.executeHttpRequest(RequestBuilder.java:187)
+	at org.demo.requestbuilder.RequestBuilder.requestCall(RequestBuilder.java:213)
+	at org.demo.tests.Test_Emp.TC_001_CreateEmp_POST_Request(Test_Emp.java:18)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Create a new record in the database)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC_003_ReadAnEmp_GET_Request({endpoints=/employee/1, id=3, execute=yes, testcasename=TC_003_ReadAnEmp_GET_Request, endpointname=R...)">
+                  </a> <!-- TC_003_ReadAnEmp_GET_Request({endpoints=/employee/1, id=3, execute=yes, testcasename=TC_003_ReadAnEmp_GET_Request, endpointname=R...) -->
+                  <span class="method-name">TC_003_ReadAnEmp_GET_Request</span>
+                  <span class="parameters">({endpoints=/employee/1, id=3, execute=yes, testcasename=TC_003_ReadAnEmp_GET_Request, endpointname=ReadAnEmp})</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+expected: true
+ but was: false
+	at org.demo.tests.Test_Emp.TC_003_ReadAnEmp_GET_Request(Test_Emp.java:40)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Get a single employee data)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC_004_UpdateEmp_PUT_Request({endpoints=/update/21, id=4, execute=yes, testcasename=TC_004_UpdateEmp_PUT_Request, endpointname=Up...)">
+                  </a> <!-- TC_004_UpdateEmp_PUT_Request({endpoints=/update/21, id=4, execute=yes, testcasename=TC_004_UpdateEmp_PUT_Request, endpointname=Up...) -->
+                  <span class="method-name">TC_004_UpdateEmp_PUT_Request</span>
+                  <span class="parameters">({endpoints=/update/21, id=4, execute=yes, testcasename=TC_004_UpdateEmp_PUT_Request, endpointname=UpdateEmp})</span>
+                  <div class="stack-trace">org.demo.exceptions.FrameworkException: Error executing HTTP request: Don&apos;t know how to encode {
+  &quot;name&quot;: &quot;Vignesh&quot;,
+  &quot;salary&quot;: &quot;45&quot;,
+  &quot;age&quot;: &quot;23&quot;
+} as a byte stream.
+
+Please use EncoderConfig (EncoderConfig#encodeContentTypeAs) to specify how to serialize data for this content-type.
+For example: &quot;given().config(RestAssured.config().encoderConfig(encoderConfig().encodeContentTypeAs(&quot;&quot;, ContentType.TEXT))). ..&quot;
+	at org.demo.requestbuilder.RequestBuilder.executeHttpRequest(RequestBuilder.java:187)
+	at org.demo.requestbuilder.RequestBuilder.requestCall(RequestBuilder.java:213)
+	at org.demo.tests.Test_Emp.TC_004_UpdateEmp_PUT_Request(Test_Emp.java:45)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Update an employee record)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC_005_DeleteEmp_DELETE_Request({endpoints=/delete/2, id=5, execute=yes, testcasename=TC_005_DeleteEmp_DELETE_Request, endpointname=...)">
+                  </a> <!-- TC_005_DeleteEmp_DELETE_Request({endpoints=/delete/2, id=5, execute=yes, testcasename=TC_005_DeleteEmp_DELETE_Request, endpointname=...) -->
+                  <span class="method-name">TC_005_DeleteEmp_DELETE_Request</span>
+                  <span class="parameters">({endpoints=/delete/2, id=5, execute=yes, testcasename=TC_005_DeleteEmp_DELETE_Request, endpointname=DeleteEmp})</span>
+                  <div class="stack-trace">java.lang.AssertionError: 
+expected: true
+ but was: false
+	at org.demo.tests.Test_Emp.TC_005_DeleteEmp_DELETE_Request(Test_Emp.java:56)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Delete an employee record)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Employee-class-failed -->
+          <div class="suite-Employee-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">org.demo.tests.Test_Emp</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC_002_ReadAllEmp_GET_Request({endpoints=/employees, id=2, execute=yes, testcasename=TC_002_ReadAllEmp_GET_Request, endpointname=R...)">
+                  </a> <!-- TC_002_ReadAllEmp_GET_Request({endpoints=/employees, id=2, execute=yes, testcasename=TC_002_ReadAllEmp_GET_Request, endpointname=R...) -->
+                  <span class="method-name">TC_002_ReadAllEmp_GET_Request</span>
+                  <span class="parameters">({endpoints=/employees, id=2, execute=yes, testcasename=TC_002_ReadAllEmp_GET_Request, endpointname=ReadAllEmp})</span>
+                  <em>
+(Get all employee data)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Employee-class-passed -->
+        </div> <!-- panel Employee -->
+        <div panel-name="test-xml-Employee" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\Pon Vignesh\IdeaProjects\api-testing-framework\src\test\resources\testrunner\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite data-provider-thread-count=&quot;3&quot; name=&quot;Employee&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;org.demo.listeners.ListenerClass&quot;/&gt;
+    &lt;listener class-name=&quot;org.demo.listeners.MethodInterceptor&quot;/&gt;
+    &lt;listener class-name=&quot;org.demo.listeners.AnnotationTransformer&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;1&quot; name=&quot;Demo Script&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;org.demo.tests.Test_Emp&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Demo Script --&gt;
+&lt;/suite&gt; &lt;!-- Employee --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Employee" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Employee</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Demo Script (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Employee" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Employee</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Employee" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Employee</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Employee');
+function tableData_Employee() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(5);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'TC_002_ReadAllEmp_GET_Request')
+data.setCell(0, 2, 'org.demo.tests.Test_Emp')
+data.setCell(0, 3, 2160);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'TC_001_CreateEmp_POST_Request')
+data.setCell(1, 2, 'org.demo.tests.Test_Emp')
+data.setCell(1, 3, 1817);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'TC_003_ReadAnEmp_GET_Request')
+data.setCell(2, 2, 'org.demo.tests.Test_Emp')
+data.setCell(2, 3, 1235);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'TC_005_DeleteEmp_DELETE_Request')
+data.setCell(3, 2, 'org.demo.tests.Test_Emp')
+data.setCell(3, 3, 1076);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'TC_004_UpdateEmp_PUT_Request')
+data.setCell(4, 2, 'org.demo.tests.Test_Emp')
+data.setCell(4, 3, 25);
+window.suiteTableData['Employee']= { tableData: data, tableDiv: 'times-div-Employee'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <div id="times-div-Employee">
+              </div> <!-- times-div-Employee -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Employee" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Employee</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Employee" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Employee" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">org.demo.tests.Test_Emp</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TC_001_CreateEmp_POST_Request({endpoints=/create, id=1, execute=yes, testcasename=TC_001_CreateEmp_POST_Request, endpointname=Crea...)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TC_002_ReadAllEmp_GET_Request({endpoints=/employees, id=2, execute=yes, testcasename=TC_002_ReadAllEmp_GET_Request, endpointname=R...)</span>
+                <span class="method-start">1828 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TC_003_ReadAnEmp_GET_Request({endpoints=/employee/1, id=3, execute=yes, testcasename=TC_003_ReadAnEmp_GET_Request, endpointname=R...)</span>
+                <span class="method-start">3990 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TC_004_UpdateEmp_PUT_Request({endpoints=/update/21, id=4, execute=yes, testcasename=TC_004_UpdateEmp_PUT_Request, endpointname=Up...)</span>
+                <span class="method-start">5226 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TC_005_DeleteEmp_DELETE_Request({endpoints=/delete/2, id=5, execute=yes, testcasename=TC_005_DeleteEmp_DELETE_Request, endpointname=...)</span>
+                <span class="method-start">5253 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

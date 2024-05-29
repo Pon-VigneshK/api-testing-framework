@@ -1,0 +1,24 @@
+{
+  "FHIR_TestData" : [ {
+    "endpoints" : "/create",
+    "id" : 1,
+    "env" : "QA",
+    "execute" : "yes",
+    "testcasename" : "TC_001_CreateEmp_POST_Request",
+    "endpointname" : "CreateEmp"
+  }, {
+    "endpoints" : "/gf",
+    "id" : 6,
+    "env" : "QA",
+    "execute" : "yes",
+    "testcasename" : "TC_001_CreateEmp_POST_Request",
+    "endpointname" : "CreateEmp"
+  }, {
+    "endpoints" : "/employees",
+    "id" : 7,
+    "env" : "QA",
+    "execute" : "yes",
+    "testcasename" : "TC_002_ReadAllEmp_GET_Request",
+    "endpointname" : "ReadAllEmp"
+  } ]
+}

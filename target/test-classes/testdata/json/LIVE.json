@@ -1,0 +1,10 @@
+{
+  "FHIR_TestData" : [ {
+    "endpoints" : "/delete/2",
+    "id" : 5,
+    "env" : "LIVE",
+    "execute" : "yes",
+    "testcasename" : "TC_005_DeleteEmp_DELETE_Request",
+    "endpointname" : "DeleteEmp"
+  } ]
+}

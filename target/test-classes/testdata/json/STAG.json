@@ -1,0 +1,10 @@
+{
+  "FHIR_TestData" : [ {
+    "endpoints" : "/employee/1",
+    "id" : 3,
+    "env" : "STAG",
+    "execute" : "yes",
+    "testcasename" : "TC_003_ReadAnEmp_GET_Request",
+    "endpointname" : "ReadAnEmp"
+  } ]
+}

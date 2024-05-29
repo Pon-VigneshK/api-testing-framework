@@ -1,0 +1,40 @@
+{
+  "RunManager" : {
+    "testCaseLists" : [ {
+      "count" : 1,
+      "id" : 1,
+      "priority" : 1,
+      "execute" : "yes",
+      "testcasename" : "TC_001_CreateEmp_POST_Request",
+      "testdescription" : "Create a new record in the database"
+    }, {
+      "count" : 1,
+      "id" : 2,
+      "priority" : 2,
+      "execute" : "yes",
+      "testcasename" : "TC_002_ReadAllEmp_GET_Request",
+      "testdescription" : "Get all employee data"
+    }, {
+      "count" : 1,
+      "id" : 3,
+      "priority" : 3,
+      "execute" : "yes",
+      "testcasename" : "TC_003_ReadAnEmp_GET_Request",
+      "testdescription" : "Get a single employee data"
+    }, {
+      "count" : 1,
+      "id" : 4,
+      "priority" : 4,
+      "execute" : "yes",
+      "testcasename" : "TC_004_UpdateEmp_PUT_Request",
+      "testdescription" : "Update an employee record"
+    }, {
+      "count" : 1,
+      "id" : 5,
+      "priority" : 5,
+      "execute" : "yes",
+      "testcasename" : "TC_005_DeleteEmp_DELETE_Request",
+      "testdescription" : "Delete an employee record"
+    } ]
+  }
+}

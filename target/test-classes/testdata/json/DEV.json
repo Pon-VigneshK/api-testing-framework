@@ -1,0 +1,24 @@
+{
+  "FHIR_TestData" : [ {
+    "endpoints" : "/employees",
+    "id" : 2,
+    "env" : "DEV",
+    "execute" : "yes",
+    "testcasename" : "TC_002_ReadAllEmp_GET_Request",
+    "endpointname" : "ReadAllEmp"
+  }, {
+    "endpoints" : "/employee/1",
+    "id" : 8,
+    "env" : "DEV",
+    "execute" : "yes",
+    "testcasename" : "TC_003_ReadAnEmp_GET_Request",
+    "endpointname" : "ReadAnEmp"
+  }, {
+    "endpoints" : "/delete/2",
+    "id" : 10,
+    "env" : "DEV",
+    "execute" : "yes",
+    "testcasename" : "TC_005_DeleteEmp_DELETE_Request",
+    "endpointname" : "DeleteEmp"
+  } ]
+}

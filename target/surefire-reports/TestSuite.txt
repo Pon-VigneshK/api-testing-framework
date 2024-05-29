@@ -1,0 +1,42 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 8.669 s <<< FAILURE! - in TestSuite
+TC_001_CreateEmp_POST_Request(org.demo.tests.Test_Emp)  Time elapsed: 1.824 s  <<< FAILURE!
+org.demo.exceptions.FrameworkException: 
+Error executing HTTP request: Don't know how to encode {
+  "name": "Vignesh",
+  "salary": "123",
+  "age": "23"
+} as a byte stream.
+
+Please use EncoderConfig (EncoderConfig#encodeContentTypeAs) to specify how to serialize data for this content-type.
+For example: "given().config(RestAssured.config().encoderConfig(encoderConfig().encodeContentTypeAs("", ContentType.TEXT))). .."
+	at org.demo.tests.Test_Emp.TC_001_CreateEmp_POST_Request(Test_Emp.java:18)
+
+TC_003_ReadAnEmp_GET_Request(org.demo.tests.Test_Emp)  Time elapsed: 1.236 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+expected: true
+ but was: false
+	at org.demo.tests.Test_Emp.TC_003_ReadAnEmp_GET_Request(Test_Emp.java:40)
+
+TC_004_UpdateEmp_PUT_Request(org.demo.tests.Test_Emp)  Time elapsed: 0.026 s  <<< FAILURE!
+org.demo.exceptions.FrameworkException: 
+Error executing HTTP request: Don't know how to encode {
+  "name": "Vignesh",
+  "salary": "45",
+  "age": "23"
+} as a byte stream.
+
+Please use EncoderConfig (EncoderConfig#encodeContentTypeAs) to specify how to serialize data for this content-type.
+For example: "given().config(RestAssured.config().encoderConfig(encoderConfig().encodeContentTypeAs("", ContentType.TEXT))). .."
+	at org.demo.tests.Test_Emp.TC_004_UpdateEmp_PUT_Request(Test_Emp.java:45)
+
+TC_005_DeleteEmp_DELETE_Request(org.demo.tests.Test_Emp)  Time elapsed: 1.077 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+expected: true
+ but was: false
+	at org.demo.tests.Test_Emp.TC_005_DeleteEmp_DELETE_Request(Test_Emp.java:56)
+
