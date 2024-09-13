@@ -1,4 +1,10 @@
 package org.gcit.enums;
+
 /**
- * This package contains Enums used across the entire framework. See individual classes for more details.
- */
+ * Package contains Enums that is used across the entire framework/Project. See individual classes for more details.
+ *
+ * @author Pon Vignesh K
+ * @date 2024-07-02
+ * @version 1.0
+ * @since 1.0
+ * */

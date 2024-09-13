@@ -5,26 +5,28 @@ import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.gcit.constants.FrameworkConstants;
-import org.gcit.exceptions.FrameworkException;
-import org.gcit.exceptions.InvalidPathForExcelException;
+import org.gcit.enums.LogType;
+import org.gcit.exceptions.BaseException;
+import org.gcit.exceptions.ExcelFileNotFoundException;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public final class ExcelUtils {
     private ExcelUtils() {
     }
-    // Method to retrieve test details from an Excel sheet.
+
     public static List<Map<String, String>> getTestDetails(String sheetname) {
         List<Map<String, String>> list = new ArrayList<>();
         try (FileInputStream fs = new FileInputStream(FrameworkConstants.getExcelFilePath())) {
             XSSFWorkbook workbook = new XSSFWorkbook(fs);
             String sheetName = sheetname;
+//            String sheetName = "RUNMANAGER";
             XSSFSheet sheet = workbook.getSheet(sheetName);
             int lastrownum = sheet.getLastRowNum();
             int lastcolnum = sheet.getRow(0).getLastCellNum();
@@ -38,15 +40,14 @@ public final class ExcelUtils {
                 }
                 list.add(map);
             }
-        } catch (FileNotFoundException e) {
-            throw new InvalidPathForExcelException("Excel File you trying to read is not found");
+        } catch (java.io.FileNotFoundException e) {
+            throw new ExcelFileNotFoundException("Excel file not found");
         } catch (IOException e) {
-            throw new FrameworkException("Some io exception happened  while reading excel file");
+            throw new BaseException("Error retrieving test data from Excel sheet", e);
         }
-
         return list;
     }
-    // Helper method to convert cell values to strings.
+
     private static String convertCellValueToString(Cell cell) {
         if (cell == null) {
             return "";
@@ -71,6 +72,5 @@ public final class ExcelUtils {
         }
     }
 }
-
 
 

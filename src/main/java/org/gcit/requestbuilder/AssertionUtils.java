@@ -5,8 +5,11 @@ import org.gcit.reports.ExtentLogger;
 
 import java.util.*;
 
-public final class AssertionUtils {
+import static org.gcit.enums.LogType.ERROR;
+import static org.gcit.enums.LogType.INFO;
+import static org.gcit.logger.LogService.log;
 
+public final class AssertionUtils {
 
     public static boolean jsonResponseBodyVerification(Response response, Map<String, Object> expectedValuesMap) {
         // List to store details of actual verifications
@@ -38,10 +41,14 @@ public final class AssertionUtils {
                         String.valueOf(assertions.getExpectedValue()), String.valueOf(assertions.getActualValue()), assertions.getResult()})
                 .toArray(String[][] :: new);
         ExtentLogger.logInfoTable(finalAssertionsMap);
-        if (allMatched)
+        if (allMatched){
             ExtentLogger.log("Response body validated successfully with the values of:  " + expectedValuesMap);
-        else
+            log(INFO, "Response body validated successfully with the values of:  " + expectedValuesMap);
+        }
+        else{
             ExtentLogger.fail("Response Body Validation Failed !!! with the values of:  " + expectedValuesMap);
+            log(ERROR,"Response Body Validation Failed !!! with the values of:  " + expectedValuesMap);
+        }
         return allMatched;
     }
 }

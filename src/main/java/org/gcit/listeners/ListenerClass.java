@@ -3,6 +3,7 @@ package org.gcit.listeners;
 import org.gcit.annotations.FrameworkAnnotation;
 import org.gcit.reports.ExtentLogger;
 import org.gcit.reports.ExtentReport;
+import org.gcit.utils.ReportDatabaseController;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
@@ -11,10 +12,20 @@ import org.testng.ITestResult;
 import java.io.IOException;
 import java.util.Arrays;
 
+import static org.gcit.enums.LogType.*;
+import static org.gcit.logger.LogService.log;
+import static org.gcit.utils.ReportDatabaseController.historyLog;
+
 /**
- * Implements {@link org.testng.ITestListener} and {@link org.testng.ISuiteListener} to leverage the abstract methods.
- * Mostly used to assist in extent report generation.
- * <pre>Please make sure to add the listener details in the testng.xml file.</pre>
+ * Implements {@link org.testng.ITestListener} and {@link org.testng.ISuiteListener} to leverage the abstract methods
+ * Mostly used to help in extent report generation
+ *
+ * <pre>Please make sure to add the listener details in the testng.xml file</pre>
+ *
+ * @date 2024-07-02
+ * @author Pon Vignesh K
+ * @version 1.0
+ * @since 1.0
  */
 public class ListenerClass implements ITestListener, ISuiteListener {
 
@@ -60,6 +71,9 @@ public class ListenerClass implements ITestListener, ISuiteListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         ExtentLogger.pass(result.getMethod().getMethodName() + " is passed !!");
+        historyLog(result.getMethod().getMethodName(), "Pass");
+        log(INFO, result.getMethod().getMethodName() + " is passed !!");
+        log(INFO, "------------------------------------------------------------");
     }
     /**
      * Marks the test as fail and logs it in the report.
@@ -67,10 +81,14 @@ public class ListenerClass implements ITestListener, ISuiteListener {
      */
     @Override
     public void onTestFailure(ITestResult result) {
-//        ExtentLogger.fail(result.getMethod().getMethodName() + " is failed !!");
         ExtentLogger.logStackTraceInfoInExtentReport(Arrays.toString(result.getThrowable().getStackTrace()));
         ExtentLogger.fail(result.getThrowable().getMessage());
         ExtentLogger.fail(result.getThrowable().toString());
+        ExtentLogger.fail(result.getMethod().getMethodName() + " is failed !!");
+        historyLog(result.getMethod().getMethodName(), "Fail");
+        //log(DEBUG, Arrays.toString(result.getThrowable().getStackTrace()));
+        log(ERROR, result.getMethod().getMethodName() + " is failed !!");
+        log(INFO, "------------------------------------------------------------");
     }
     /**
      * Marks the test as skip and logs it in the report.
@@ -80,5 +98,8 @@ public class ListenerClass implements ITestListener, ISuiteListener {
     @Override
     public void onTestSkipped(ITestResult result) {
         ExtentLogger.skip(result.getMethod().getMethodName() + " is skipped !!");
+        historyLog(result.getMethod().getMethodName(), "Skip");
+        log(INFO, result.getMethod().getMethodName() + " is skipped !!");
+        log(INFO, "------------------------------------------------------------");
     }
 }
